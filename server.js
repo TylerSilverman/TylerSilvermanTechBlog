@@ -29,9 +29,9 @@ const hbs = exphbs.create({});
 const formatTime = require('./utils/helper');
 
 var app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1225;
 
-//set up sessions and the secrets puts what is made to be for you. keeps track of how many times you login and out of the site. 
+//set up sessions and the secrets puts what is made to be for you. keeps track of how many times you login and out of the site. // makes the connection to mysql 
 const user = {
   secret: 'myPassword',
   cookie: {},
