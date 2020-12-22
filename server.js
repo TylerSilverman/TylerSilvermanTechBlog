@@ -1,37 +1,33 @@
-//installed
-//npm init -y
-//npm install express
 //npm i sequelize
+//npm init -y
+//npm i
 //npm i mysql2
-//npm install handlebars
-
-//npm install express-session
-//npm install bcrypt
-
 //npm install dotenv
+//npm install express
 //npm install connect-session-sequelize
+//npm install express-session
 //npm install exphbs
-//npm install
-//npm install --save-dev eslint-plugin-prettier
-//npm install --save-dev eslint-config-prettier
+//npm install bcrypt
+//npm install handlebars
+//npm install express-handlebars
+//npm install seed
 
+const sequelize = require('./config/connection');
 const express = require('express');
 const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+var hbs = exphbs.create({ /* config */ });
 const path = require('path');
-const hbs = exphbs.create({});
 
+// const formatTime = require('./utils/helper');
 
-// Import the custom helper methods
-const formatTime = require('./utils/helper');
 
 var app = express();
-const PORT = process.env.PORT || 1225;
+const PORT = process.env.PORT || 1245;
 
-//set up sessions and the secrets puts what is made to be for you. keeps track of how many times you login and out of the site. // makes the connection to mysql 
+//adding in a sessions in mysql to show how many times the user logins
 const user = {
   secret: 'myPassword',
   cookie: {},
@@ -42,6 +38,7 @@ const user = {
   })
 };
 
+//runing the function above. 
 app.use(session(user));
 
 app.engine('handlebars', hbs.engine);
@@ -51,7 +48,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
+// app.get('/', (req, res) =>
+// if)
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening http://localhost:' + PORT));
-});
+    app.listen(PORT, () => console.log('Now listening http://localhost:' + PORT));
+  });
