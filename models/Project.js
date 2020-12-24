@@ -36,7 +36,7 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'achievments',
+    modelName: 'blogCreated',
   }
 );
 

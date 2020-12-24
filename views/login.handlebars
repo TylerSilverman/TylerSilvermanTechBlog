@@ -1,6 +1,6 @@
- 
+ {{!-- //bootstrap --}}
 <h2>Login</h2>
-
+<div class= "card" id="loginSection">
 <form class="form login-form" action="/login" method="POST">
   <div class="form-group">
     <label for="email-login">Email:</label>
@@ -14,40 +14,6 @@
     <button class="btn btn-primary" name="loginID" type="submit">Login</button>
   </div>
 </form>
+</div>
 
 <script src="/js/login.js"></script> 
-
-{{!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration/Login </title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-</head>
-
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Login 
-    </h1>
-    {{!-- //shows the logout button when logout --}}
-    {{#if logged_in}} 
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>

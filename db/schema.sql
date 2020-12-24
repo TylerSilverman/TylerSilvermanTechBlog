@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS myWebsite_db;
+DROP DATABASE IF EXISTS socialTechBlog_db;
 
-CREATE DATABASE myWebsite_db;
+CREATE DATABASE socialTechBlog_db;
 
-USE myWebsite_db;
+USE socialTechBlog_db;
