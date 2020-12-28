@@ -1,5 +1,5 @@
- {{!-- //bootstrap --}}
-<h2>Login</h2>
+<div class="login-card">
+<h2 class="page-title">Login</h2>
 <div class= "card" id="loginSection">
 <form class="form login-form" action="/login" method="POST">
   <div class="form-group">
@@ -11,9 +11,31 @@
     <input class="form-input" name="password" type="password" id="password-login" />
   </div>
   <div class="form-group">
-    <button class="btn btn-primary" name="loginID" type="submit">Login</button>
+    <button class="btn btn-primary" name="loginID" href="/signup" type="submit">Login</button>
   </div>
+</div>
 </form>
 </div>
+<h2 class="page-title">Signup</h2>
+    <div class= "card" id="signupSection">
+    <form class="form signup-form" action="/signup" method="POST">
+      <div class="form-group">
+        <label for="username-signup">Username:</label>
+        <input class="form-input" type="text" id="username-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">Email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" name="signupID" type="submit" href="/signup">Signup</button>
+      </div>
+    </form>
+    </div>
+  </div>
 
-<script src="/js/login.js"></script> 
+<script src="./js/login.js"></script> 
