@@ -1,7 +1,7 @@
 <div class="login-card">
 <h2 class="page-title">Login</h2>
 <div class= "card" id="loginSection">
-<form class="form login-form" action="/login" method="POST">
+<form class="form login-form">
   <div class="form-group">
     <label for="email-login">Email:</label>
     <input class="form-input" name="email" type="text" id="email-login" />
@@ -11,7 +11,7 @@
     <input class="form-input" name="password" type="password" id="password-login" />
   </div>
   <div class="form-group">
-    <button class="btn btn-primary" name="loginID" href="/signup" type="submit">Login</button>
+    <button class="btn btn-primary" role="button" name="loginID" href="/dashboard" type="submit">Login</button>
   </div>
 </div>
 </form>
@@ -32,10 +32,10 @@
         <input class="form-input" type="password" id="password-signup" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" name="signupID" type="submit" href="/signup">Signup</button>
+        <button class="btn btn-primary" name="signupID" type="submit" href="/dashboard">Signup</button>
       </div>
     </form>
     </div>
   </div>
 
-<script src="./js/login.js"></script> 
+<script src="/js/login.js"></script> 

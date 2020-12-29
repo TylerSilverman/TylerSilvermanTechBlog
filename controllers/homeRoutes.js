@@ -8,7 +8,7 @@ router.get('/', async (req, res) =>{
         const dbProjectData = await Project.findAll ({
             include: [{
                 model: User,
-                attributes: ["name", "email"],
+                attributes: ["username", "email"],
             },
         ],
         });
@@ -42,6 +42,28 @@ router.post('/login', (req, res) =>{
 
     console.log("POST LOGIN INFORMATION", req.body)
     res.render('login')
+});
+
+router.get('/dashboard', (req, res) =>{
+
+    if (req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    }
+
+    console.log("SAVED LOGIN INFORMATION", req.body)
+    res.render('dashboard')
+});
+
+router.post('/signup', (req, res) =>{
+
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    console.log("SAVED Signup INFORMATION", req.body)
+    res.render('dashboard')
 });
 
 // router.post ('/', req, res) = {

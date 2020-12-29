@@ -1,9 +1,11 @@
+console.log("made it to login.js")
 const loginFormHandler = async (event) => {
     event.preventDefault();
+    
   
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-  
+    console.log("email")
     if (email && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
@@ -12,9 +14,10 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
-        alert('Failed to log in.');
+        document.location.replace('/dashboard');
+        // alert('Failed to log in.');
       }
     }
   };
@@ -36,7 +39,8 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to sign up.');
+        document.location.replace('/dashboard');
+        // alert('Failed to sign up.');
       }
     }
   };
@@ -48,5 +52,5 @@ const loginFormHandler = async (event) => {
   
   document
     .querySelector('.signup-form')
-    .addEventListener('signup', signupFormHandler);
+    .addEventListener('submit', signupFormHandler);
   
