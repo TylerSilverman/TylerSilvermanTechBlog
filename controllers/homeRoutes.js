@@ -39,6 +39,11 @@ router.get('/login', (req, res) =>{
 
 //this is posting the information that was submitted in the login.handlebars layout
 router.post('/login', (req, res) =>{
+    
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
 
     console.log("POST LOGIN INFORMATION", req.body)
     res.render('login')
@@ -65,14 +70,11 @@ router.post('/signup', (req, res) =>{
     console.log("SAVED Signup INFORMATION", req.body)
     res.render('dashboard')
 });
-
-// router.post ('/', req, res) = {
-
-// }
-
-
-
-
+//trying to get the blogCreate page
+router.get('/blogCreate', (req, res) =>{
+    res.render('/blogCreate')
+    console.log("blogCreate")
+})
 
 
 

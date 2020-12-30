@@ -1,4 +1,4 @@
-console.log("made it to login.js")
+console.log("made it to the lopcated in /js/login.js")
 const loginFormHandler = async (event) => {
     event.preventDefault();
     
@@ -30,7 +30,7 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
   
     if (username && email && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -39,8 +39,10 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
+
+        //add the alert back after fixing the dashboard route for signing up a new user
         document.location.replace('/dashboard');
-        // alert('Failed to sign up.');
+        alert('Failed to sign up.');
       }
     }
   };
@@ -53,4 +55,6 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
+
+    
   

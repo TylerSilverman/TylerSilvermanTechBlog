@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
   try {
     const newProject = await Project.create({
       ...req.body,
-      user_id: req.session.user_id,
+      email: req.session.email,
     });
 
     res.status(200).json(newProject);
@@ -23,7 +23,7 @@ router.delete('/:id', async (req, res) => {
     const projectData = await Project.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        email: req.session.email,
       },
     });
 

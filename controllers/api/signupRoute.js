@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
   
   router.post('/signup', async (req, res) => {
     try {
-        console.log("signup route")
+        console.log("signup route being SAVED /post")
       const newUserData = await User.findOne({ where: { email: req.body.email } });
   
       if (!newUserData) {
@@ -62,6 +62,7 @@ router.post('/', async (req, res) => {
   
   router.get("/", (req, res) =>{
     res.json("testing the signup Route")
+    console.log("signup Route Get")
   })
 
 

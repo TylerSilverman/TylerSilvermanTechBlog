@@ -1,16 +1,52 @@
-<section class="container">
-  <h3 class="dashbboard-email">{{dashboard.username-signup}}</h3>
-  <!-- If the user is logged in, render the gallery content -->
-  {{#if loggedIn}}
-  <section class="flex-row justify-center">
-    {{#each dashboard as |dashboard|}}
-    {{> dashboard-details}}
-    {{/each}}
-  </section>
-</section>
-<!-- Otherwise, provide a link to login -->
-{{else}}
-<a href="/login">You must login first to view the Dashboard</a>
-{{/if}}
+<br>
+<br>
+<br>
+<br>
+<br>
+{{!-- <div class="row" class="text-center">
+  <div class="col-auto">
+    <h2>Welcome {{email}}!</h2>
+  </div>
+</div> --}}
+<div class="card-md-6 createCardPost">
+<div class="row">
+  <div class="col mb-6">
+    <h6>Create A Post </h6>
 
-<h5>You are at the DashBoard handlebar</h5>
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name" style="width: 10rem;">Blogger Name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="project-desc" style="width: 10rem;">Description of Post:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Create</button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+  {{#if dashboard.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each dashboard as |dashboard|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{dashboard.id}}">{{dashboard.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{dashboard.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/dashboard.js"></script>
