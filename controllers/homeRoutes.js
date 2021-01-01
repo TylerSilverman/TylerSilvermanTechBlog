@@ -29,11 +29,11 @@ router.get('/', async (req, res) =>{
 router.get('/login', (req, res) =>{
 
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/subscribe');
         return;
     }
 
-    console.log("SAVED LOGIN INFORMATION", req.body)
+    console.log("SAVED registry INFORMATION", req.session.loggedIn)
     res.render('login')
 });
 
@@ -49,6 +49,17 @@ router.post('/login', (req, res) =>{
     res.render('login')
 });
 
+// router.get('/login', (req, res) =>{
+
+//     if (req.session.loggedIn) {
+//         res.redirect('/login');
+//         return;
+//     }
+
+//     console.log("SAVED login INFORMATION", req.body)
+//     res.render('login')
+// });
+
 router.get('/dashboard', (req, res) =>{
 
     if (req.session.loggedIn) {
@@ -56,7 +67,7 @@ router.get('/dashboard', (req, res) =>{
         return;
     }
 
-    console.log("SAVED LOGIN INFORMATION", req.body)
+    console.log("SAVED login INFORMATION",req.session.loggedIn)
     res.render('dashboard')
 });
 
@@ -66,7 +77,7 @@ router.post('/subscribe', (req, res) =>{
         res.redirect('/subscribe');
         return;
     }
-    console.log("SAVED Signup INFORMATION", req.body)
+    console.log("SAVED scribed INFORMATION", req.body)
     res.render('subscribe')
 });
 
@@ -77,6 +88,7 @@ router.get('/blogCreate', (req, res) =>{
         res.redirect('/blogCreate');
         return;
     }
+    console.log("SAVED blog Created INFORMATION", req.body)
     res.render('blogCreate')
 })
 

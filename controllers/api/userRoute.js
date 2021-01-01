@@ -3,8 +3,8 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    console.log("creating user", req.body)
-    const userData = await User.create(req.body);
+    console.log("creating user", req.session.user_id)
+    const userData = await User.create(req.session.user_id);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -59,6 +59,18 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/blogCreate', (req, res) =>{
+
+  if (req.body) {
+      res.redirect('/');
+      return;
+  }
+
+  console.log("SAVED blog INFORMATION", req.body)
+  res.render('blog')
+});
+
 
 router.get("/", (req, res) =>{
   res.json("testing")

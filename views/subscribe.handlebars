@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Subsrcibe Form</title>
-		<style>
+
+<head>
+	<meta charset="utf-8">
+	<title>Registery Form</title>
+	<style>
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
 			font-family: Tahoma, Geneva, sans-serif;
 		}
+
 		.login-form h1 {
 			text-align: center;
 			color: #4d4d4d;
 			font-size: 24px;
 			padding: 20px 0 20px 0;
 		}
+
 		.login-form input[type="password"],
 		.login-form input[type="text"] {
 			width: 100%;
 			padding: 15px;
 			border: 1px solid #dddddd;
 			margin-bottom: 15px;
-			box-sizing:border-box;
+			box-sizing: border-box;
 		}
+
 		.login-form input[type="submit"] {
 			width: 100%;
 			padding: 15px;
@@ -33,30 +37,33 @@
 			font-weight: bold;
 			color: #ffffff;
 		}
-		</style>
-	</head>
-	<body>
-		<div class="login-form">
-			<h1>Subscribe</h1>
-			<form action="login" method="GET">
-				<input type="text" name="username" placeholder="Username" required>
-        <br>
-				<input type="password" name="password" placeholder="Password" required>
-        <br>
-        <input type="text" name="name" placeholder="Name" required>
-        <br>
-        <input type="text" name="email" placeholder="Email" required>
+	</style>
+</head>
 
-        <br>
-          <button class="btn btn-info" type="submit" href="./dashboard">Subscribe Now</button>
-			</form>
-      <p>After subscribing, you will be prompted to the log in Screen</p>
-		</div>
+<body>
+	<div class="login-form">
+		<h1>Register</h1>
+		<form action="login" method="GET">
+			<input type="text" name="username" placeholder="Username" required>
+			<br>
+			<input type="password" name="password" placeholder="Password" required>
+			<br>
+			<input type="text" name="name" placeholder="Name" required>
+			<br>
+			<input type="text" name="email" placeholder="Email" required>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-{{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+			<br>
+			<button class="btn btn-info" type="submit" href="./dashboard">Register Now</button>
+			<a href="/login" class="btn btn-warning">Log In Here</a>
+		</form>
+		<p>After subscribing, you will be prompted to the log in Screen</p>
+	</div>
 
-	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	{{#if loggedIn}}
+	<script src="/js/logout.js"></script>
+	{{/if}}
+
+</body>
+
 </html>
