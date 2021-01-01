@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Login Form</title>
+		<title>Subsrcibe Form</title>
 		<style>
 		.login-form {
 			width: 300px;
@@ -37,19 +37,26 @@
 	</head>
 	<body>
 		<div class="login-form">
-			<h1>Login Form</h1>
-			<form action="dashboard" method="GET">
+			<h1>Subscribe</h1>
+			<form action="login" method="GET">
 				<input type="text" name="username" placeholder="Username" required>
+        <br>
 				<input type="password" name="password" placeholder="Password" required>
-          <button class="btn btn-info" type="submit" href="./dashboard">Log In</button>
+        <br>
+        <input type="text" name="name" placeholder="Name" required>
+        <br>
+        <input type="text" name="email" placeholder="Email" required>
+
+        <br>
+          <button class="btn btn-info" type="submit" href="./dashboard">Subscribe Now</button>
 			</form>
+      <p>After subscribing, you will be prompted to the log in Screen</p>
 		</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  {{#if loggedIn}}
+{{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
 	</body>
 </html>
-

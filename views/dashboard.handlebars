@@ -1,52 +1,58 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-{{!-- <div class="row" class="text-center">
-  <div class="col-auto">
-    <h2>Welcome {{email}}!</h2>
-  </div>
-</div> --}}
-<div class="card-md-6 createCardPost">
-<div class="row">
-  <div class="col mb-6">
-    <h6>Create A Post </h6>
+<!DOCTYPE html>
+<html lang="en">
 
-    <form class="form new-project-form">
-      <div class="form-group">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog Notes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 list-container">
+        <div class="card">
+          <ul class="list-group">
+          </ul>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="col-8">
+        <br><br><br> 
+        <h4>What are you thinking? </h4>
+        <br><br><br>
+        <br><br><br>
+      <div class="card" style="width: 25rem;" >
         <label for="project-name" style="width: 10rem;">Blogger Name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="project-desc" style="width: 10rem;">Description of Post:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <br>
-      <div class="form-group">
-        <button type="submit" class="btn btn-success">Create</button>
-      </div>
-    </form>
-  </div>
-  </div>
-
-  {{#if dashboard.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each dashboard as |dashboard|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{dashboard.id}}">{{dashboard.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{dashboard.id}}">DELETE</button>
+          <input class="blog-title" id="blog-title" placeholder="Enter Title" maxlength="28" type="text">
+          <br>
+          <label for="project-desc" style="width: 10rem;">Description of Post:</label>
+          <textarea class="note-textarea" id="note-textarea" placeholder="Want to Blog" maxlength="250"
+            type=""></textarea>
+            <br>
+            <div class="form-group">
+            <button type="submit" class="btn btn-success" href="/blogCreate">Save</button>
+          
+            <button type="clear" class="btn btn-danger" href="/">Clear</button>
+          </div>
+        </div>
+        <br>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
+  </div
 
-<script src="./js/dashboard.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="./js/dashboard.js"></script>
+
+
+</html>
+</body>

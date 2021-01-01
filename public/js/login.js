@@ -1,12 +1,13 @@
 console.log("made it to the lopcated in /js/login.js")
+
 const loginFormHandler = async (event) => {
+  console.log("login form handler being used")
     event.preventDefault();
-    
-  
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
     console.log("email")
     if (email && password) {
+      console.log()
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
@@ -17,12 +18,13 @@ const loginFormHandler = async (event) => {
         document.location.replace('/dashboard');
       } else {
         document.location.replace('/dashboard');
-        // alert('Failed to log in.');
+        alert('Failed to log in.');
       }
     }
   };
   
   const signupFormHandler = async (event) => {
+    console.log("signup form handler being used")
     event.preventDefault();
   
     const username = document.querySelector('#username-signup').value.trim();
@@ -30,7 +32,8 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
   
     if (username && email && password) {
-      const response = await fetch('/api/users/login', {
+      console.log("the username, password, and email saved for signup")
+      const response = await fetch('/api/signup', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -50,7 +53,7 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-    // .addEventListener('login', );
+    
   
   document
     .querySelector('.signup-form')

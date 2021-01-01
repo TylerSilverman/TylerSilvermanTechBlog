@@ -60,21 +60,37 @@ router.get('/dashboard', (req, res) =>{
     res.render('dashboard')
 });
 
-router.post('/signup', (req, res) =>{
+router.post('/subscribe', (req, res) =>{
 
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/subscribe');
         return;
     }
-
     console.log("SAVED Signup INFORMATION", req.body)
-    res.render('dashboard')
+    res.render('subscribe')
 });
-//trying to get the blogCreate page
+
+//getting the api from blogCreate handlebar and displaying info
 router.get('/blogCreate', (req, res) =>{
-    res.render('/blogCreate')
-    console.log("blogCreate")
+
+    if (req.session.email) {
+        res.redirect('/blogCreate');
+        return;
+    }
+    res.render('blogCreate')
 })
+
+//getting the api from blogCreate handlebar and displaying info
+router.get('/subscribe', (req, res) =>{
+
+    if (req.session.loggedIn) {
+        res.redirect('/subscribe');
+        return;
+    }
+    res.render('subscribe')
+})
+
+
 
 
 
