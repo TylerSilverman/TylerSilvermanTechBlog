@@ -1,17 +1,3 @@
-//npm i sequelize
-//npm init -y
-//npm i
-//npm i mysql2
-//npm install dotenv
-//npm install express
-//npm install connect-session-sequelize
-//npm install express-session
-//npm install exphbs
-//npm install bcrypt
-//npm install handlebars
-//npm install express-handlebars
-//npm install seed
-
 const sequelize = require('./config/connection');
 const express = require('express');
 const session = require('express-session');
@@ -82,7 +68,7 @@ app.post('/auth', function(request, response) {
 	if (username && password) {
 		// connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			if (request.length > 0) {
-				request.session.loggedin = true;
+				request.session.loggedIn = true;
 				request.session.username = username;
 				response.redirect('/home');
 			} else {

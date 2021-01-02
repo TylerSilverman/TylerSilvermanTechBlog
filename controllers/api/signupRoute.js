@@ -2,22 +2,23 @@ const router = require('express').Router();
 const { User } = require('../../models');
 // const newUserData = require('express').Router();
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
+      console.log("saved LOGIN INFORMATION", req.body)
       const newUserData = await User.create(req.body);
   
       req.session.save(() => {
         req.session.user_id = newUserData.id;
         req.session.logged_in = true;
   
-        res.status(200).json(newUserData);
+        res.redirect("/dashboard")
       });
     } catch (err) {
       res.status(400).json(err.message);
     }
   });
   
-  router.post('/signup', async (req, res) => {
+  router.post('/login', async (req, res) => {
     try {
         console.log("signup route being SAVED /post")
       const newUserData = await User.findOne({ where: { email: req.body.email } });
@@ -29,7 +30,7 @@ router.post('/', async (req, res) => {
         return;
       }
   
-      const validPassword = await newUserData.checkPassword(req.body.password);
+      const validPassword = await newUserData.checkAuth(req.body.password);
   
       if (!validPassword) {
         res
@@ -42,7 +43,7 @@ router.post('/', async (req, res) => {
         req.session.user_id = newUserData.id;
         req.session.logged_in = true;
         
-        res.json({ user: newUserData, message: 'User Created, You are now logged in!' });
+        res.redirect("/dashboard")
       });
   
     } catch (err) {
@@ -51,10 +52,12 @@ router.post('/', async (req, res) => {
   });
   
   router.post('/logout', (req, res) => {
+    
     if (req.session.logged_in) {
       req.session.destroy(() => {
         res.status(204).end();
       });
+
     } else {
       res.status(404).end();
     }

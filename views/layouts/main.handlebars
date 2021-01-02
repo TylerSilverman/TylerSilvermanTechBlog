@@ -25,15 +25,15 @@
     <!-- Otherwise, show a link to login -->
     <a href="/login" class="btn btn-link">Log In</a>
     <a href="/subscribe" class="btn btn-link">Register</a>
-    <a href="/" class="btn btn-link">Log Out</a>
+    <button id="logout" class="btn btn-link">Log Out</button>
     {{/if}}
   <div class="dashboard-container">
     {{{body}}}
   </div>
   <!-- If the user is logged in, load the JS script for when they logout -->
-  {{#if loggedIn}}
+ 
   <script src="/js/logout.js"></script>
-  {{/if}}
+
   </div>
   </nav>
 

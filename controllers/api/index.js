@@ -6,7 +6,7 @@ const blogCreate =require('./blogCreate');
 
 router.use('/users', userRoute);
 router.use('/dashboard', dashboardRoute);
-router.use('/login', signupRoute);
+router.use('/', signupRoute);
 router.use('/blogCreate', blogCreate);
 
 module.exports = router;

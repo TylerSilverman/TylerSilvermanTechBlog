@@ -15,7 +15,7 @@ router.post('/blogCreate', async (req, res) => {
         email: req.session.email,
       });
   
-      res.status(200).json(newProject);
+     
     } catch (err) {
       res.status(400).json(err.message);
     }

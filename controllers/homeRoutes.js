@@ -28,58 +28,28 @@ router.get('/', async (req, res) =>{
 //this is getting the login.handlebars layout
 router.get('/login', (req, res) =>{
 
-    if (req.session.loggedIn) {
-        res.redirect('/subscribe');
-        return;
-    }
-
-    console.log("SAVED registry INFORMATION", req.session.loggedIn)
-    res.render('login')
-});
-
-//this is posting the information that was submitted in the login.handlebars layout
-router.post('/login', (req, res) =>{
-    
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    console.log("POST LOGIN INFORMATION", req.body)
-    res.render('login')
-});
-
-// router.get('/login', (req, res) =>{
-
-//     if (req.session.loggedIn) {
-//         res.redirect('/login');
-//         return;
-//     }
-
-//     console.log("SAVED login INFORMATION", req.body)
-//     res.render('login')
-// });
-
-router.get('/dashboard', (req, res) =>{
-
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
 
-    console.log("SAVED login INFORMATION",req.session.loggedIn)
-    res.render('dashboard')
+    console.log("SAVED registry INFORMATION", req.session.logged_in)
+    res.render('login')
 });
 
-router.post('/subscribe', (req, res) =>{
+//this is posting the information that was submitted in the login.handlebars layout
 
-    if (req.session.loggedIn) {
-        res.redirect('/subscribe');
+router.get('/dashboard', (req, res) =>{
+
+    if (req.session.logged_in) {
+        res.render('dashboard');
         return;
     }
-    console.log("SAVED scribed INFORMATION", req.body)
-    res.render('subscribe')
+
+    console.log("SAVED login INFORMATION",req.session.logged_in)
+    res.redirect('/login')
 });
+
 
 //getting the api from blogCreate handlebar and displaying info
 router.get('/blogCreate', (req, res) =>{
@@ -95,8 +65,8 @@ router.get('/blogCreate', (req, res) =>{
 //getting the api from blogCreate handlebar and displaying info
 router.get('/subscribe', (req, res) =>{
 
-    if (req.session.loggedIn) {
-        res.redirect('/subscribe');
+    if (req.session.logged_in) {
+        res.render('dashboard');
         return;
     }
     res.render('subscribe')
