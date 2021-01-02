@@ -17,7 +17,7 @@ router.post('/blogCreate', async (req, res) => {
         email: req.session.email,
       });
   
-     
+      res.json(newBlogPost)
     } catch (err) {
       res.status(400).json(err.message);
     }
