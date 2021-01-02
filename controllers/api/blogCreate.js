@@ -1,4 +1,6 @@
+  
 const router = require('express').Router();
+const { Project } = require('../../models');
 
 
 router.get('/dashboard', async (req, res)=>{
@@ -10,7 +12,7 @@ router.get('/dashboard', async (req, res)=>{
 router.post('/blogCreate', async (req, res) => {
     try {
       console.log("post route hitting ")
-      const newProject = await Project.create({
+      const newBlogPost = await Project.create({
         ...req.body,
         email: req.session.email,
       });

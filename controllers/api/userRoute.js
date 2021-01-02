@@ -56,21 +56,9 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
-    res.status(404).end();
+    res.status(404).end(err.message);
   }
 });
-
-router.get('/blogCreate', (req, res) =>{
-
-  if (req.body) {
-      res.redirect('/');
-      return;
-  }
-
-  console.log("SAVED blog INFORMATION", req.body)
-  res.render('blog')
-});
-
 
 router.get("/", (req, res) =>{
   res.json("testing")

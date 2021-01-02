@@ -1,55 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog Notes</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-4 list-container">
-        <div class="card">
-          <ul class="list-group">
-          </ul>
-        </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <div class="col-8">
-        <br><br><br> 
-      <div class="card" id="blogInfo" style="width: 30rem;" >
-        <label for="project-name" style="width: 30rem;">Blogger Name:</label>
-          <input class="blog-title" placeholder="Enter Title" type="text">
-          <br>
-          <label for="project-desc" style="width: 30rem;">Description of Post:</label>
-         <input class="note-textarea" placeholder="Want to Blog" type="text"></input>
-            <br>
-            <div class="form-group">
-            <a href="/blogCreate" type="submit" onclick='execute' class="btn btn-info">Save</a>
-            <a href="#" type="delete" class="btn btn-light">Delete</button>
-            <a href="/login" type="submit" class="btn btn-warning">Home</a>
-          </div>
-        </div>
-        <br>
-      </div>
-    </div>
-  </div
-
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Create A Post</title>
+		<style>
+		.dashboard-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.dashboard-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.dashboard-form input[type="password"],
+		.dashboard-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.dashboard-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="dashboard-form">
+			<h1>Post</h1>
+			<form action="/blogCreate" method="POST">
+				<input type="text" name="title" placeholder="Title">
+				<input type="text" name="description" placeholder="Description">
+          <button class="btn btn-warning" type="submit">Save</button>
+			</form>
+		</div>
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-  <script src="./js/dashboard.js"></script>
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+
+  {{#if logged_in}}
+  {{!-- <script src="/js/login.js"></script> --}}
+  {{/if}}
 
 </html>
 </body>

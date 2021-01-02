@@ -1,4 +1,5 @@
 const logout = async (event) => {
+  console.log("successfully logged out")
   event.preventDefault()
     const response = await fetch('/logout', {
       method: 'POST',
@@ -8,7 +9,7 @@ const logout = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to log out.');
+      alert('Successfully Logged Out!');
     }
   };
   

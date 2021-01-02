@@ -32,30 +32,27 @@ app.use(session(user));
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs.engine);
 
-//need to create a call back function to use this function below 
-// app.engine('handlebars', hbs.engine ({
-//   extname: 'handlebars',
-//   defualtLayout: 'main',
-//   layoutDirectory: __dirname + '/views/layouts',
-//   partialsDirectory: __dirname + "/views/partials",
-// }));
-
 app.use(express.json());//function to call the inforamtion to the body req. 
 app.use(express.urlencoded({ extended: true })); //using the app to express acess to the body requirements (req) function 
-app.use(express.static('public'));
-// app.use(express.static(path.join(__dirname, "public"))); //using express.static and app.use to pull all the files from the public folder to use mostly from the css styling. 
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public"))); //using express.static and app.use to pull all the files from the public folder to use mostly from the css styling. 
 
 app.use(routes);
 
-app.get('/', (req, res) => {
-  res.render('main-container');
+// app.get('/', (req, res) => {
+//   res.render('main-container');
+//   console.log("hello it worked");
+// });
+
+app.get("/", function (req, res){
+	res.render('main-container');
   console.log("hello it worked");
-});
+}); // express reaching out to the index.js to send a file after the response 
 
 app.get('/home', function(req, res) {
   console.log("it worked the app.get /home function")
-	if (req.session.loggedin) {
-		res.send('Welcome back, ' + req.session.username + '!');
+	if (req.session.logged_in) {
+		res.send('Welcome back, ' + req.session.logged_in + '!');
 	} else {
 		res.send('Please login to view this page!');
 	}
@@ -68,7 +65,7 @@ app.post('/auth', function(request, response) {
 	if (username && password) {
 		// connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			if (request.length > 0) {
-				request.session.loggedIn = true;
+				request.session.logged_in = true;
 				request.session.username = username;
 				response.redirect('/home');
 			} else {

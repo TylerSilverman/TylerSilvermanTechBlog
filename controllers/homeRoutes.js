@@ -8,7 +8,7 @@ router.get('/', async (req, res) =>{
         const dbProjectData = await Project.findAll ({
             include: [{
                 model: User,
-                attributes: ["username", "email"],
+                attributes: [ "email", "password"],
             },
         ],
         });
@@ -18,7 +18,7 @@ router.get('/', async (req, res) =>{
         console.log(newProjects);
         res.render("home", {
             newProjects,
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_in,
         });
     } catch (error) {
         res.status(400).json(error)
@@ -52,15 +52,15 @@ router.get('/dashboard', (req, res) =>{
 
 
 //getting the api from blogCreate handlebar and displaying info
-router.get('/blogCreate', (req, res) =>{
+// router.get('/blogCreate', (req, res) =>{
 
-    if (req.session.email) {
-        res.redirect('/blogCreate');
-        return;
-    }
-    console.log("SAVED blog Created INFORMATION", req.body)
-    res.render('blogCreate')
-})
+//     if (req.body) {
+//         res.redirect('/blogCreate');
+//         return;
+//     }
+//     console.log("SAVED blog Created INFORMATION", req.body)
+//     res.render('blogCreate')
+// })
 
 //getting the api from blogCreate handlebar and displaying info
 router.get('/subscribe', (req, res) =>{
@@ -69,6 +69,7 @@ router.get('/subscribe', (req, res) =>{
         res.render('dashboard');
         return;
     }
+    console.log("subscribe INFORMATION", req.session.logged_in)
     res.render('subscribe')
 })
 

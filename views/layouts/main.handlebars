@@ -19,8 +19,8 @@
   <nav>
     <a href="/">Home</a>
     <!-- If the user is logged in, show a logout button -->
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    {{#if logged_in}}
+    <button id="logout" class="btn btn-link">Log Out</button>
     {{else}}
     <!-- Otherwise, show a link to login -->
     <a href="/login" class="btn btn-link">Log In</a>

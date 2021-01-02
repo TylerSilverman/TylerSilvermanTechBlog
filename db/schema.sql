@@ -18,3 +18,5 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES (3, 'test', 't
 INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES (4, 'test', 'test', 'test@test.com');
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES (5,'test', 'test', 'test@test.com');
+
+SELECT `id`, `username`, `email`, `password` FROM `user` AS `user` WHERE `user`.`email` = 'silverman.tyler@gmail.com';

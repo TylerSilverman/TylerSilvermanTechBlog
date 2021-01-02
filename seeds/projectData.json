@@ -1,14 +1,14 @@
 [
     {
-      "username": "Tesitng Blog",
+      "name": "Testing Blog",
       "description": "This is a testing of description for blog "
     },
     {
-        "username": "Tesitng Blog",
+        "name": "Testing Blog",
         "description": "This is a testing of description for blog "
       },
       {
-        "username": "Tesitng Blog",
+        "name": "Testing Blog",
         "description": "This is a testing of description for blog "
       }
   ]

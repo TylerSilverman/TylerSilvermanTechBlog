@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-// const newUserData = require('express').Router();
 
 router.post('/signup', async (req, res) => {
     try {
@@ -20,7 +19,7 @@ router.post('/signup', async (req, res) => {
   
   router.post('/login', async (req, res) => {
     try {
-        console.log("signup route being SAVED /post")
+        console.log("login ")
       const newUserData = await User.findOne({ where: { email: req.body.email } });
   
       if (!newUserData) {
@@ -62,12 +61,5 @@ router.post('/signup', async (req, res) => {
       res.status(404).end();
     }
   });
-  
-  router.get("/", (req, res) =>{
-    res.json("testing the signup Route")
-    console.log("signup Route Get")
-  })
-
-
 
 module.exports = router
