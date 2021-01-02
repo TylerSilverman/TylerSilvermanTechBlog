@@ -1,10 +1,8 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# 14 Social Tech Blog
 
 ## Your Task
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
 
-Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## User Story
 
@@ -56,7 +54,12 @@ THEN I am automatically signed out of the site
 
 The following animation demonstrates the application functionality:
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./assets/14-mvc-homework-demo-01.gif) 
+![homepage](https://user-images.githubusercontent.com/70153419/103461994-3e899c80-4cf0-11eb-828a-feb1f8a6d1d5.png)
+![loginPage](https://user-images.githubusercontent.com/70153419/103462000-4a755e80-4cf0-11eb-8f83-0acd8a825b5a.PNG)
+![registerPage](https://user-images.githubusercontent.com/70153419/103462012-54975d00-4cf0-11eb-864c-08f379380ac5.PNG)
+
+(![dashboard](https://user-images.githubusercontent.com/70153419/103461959-f66a7a00-4cef-11eb-86a9-4d86e5e3c6b6.PNG)) 
+
 
 ## Getting Started
 
@@ -78,44 +81,10 @@ This homework is graded based on the following criteria:
 
     * Application must be deployed to Heroku.
 
-### Deployment: 32%
 
-* Application deployed at live URL.
+## Question and Comments
 
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+* please visit: www.tylersilverman.github.io
 
 ---
 
- © 2020 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

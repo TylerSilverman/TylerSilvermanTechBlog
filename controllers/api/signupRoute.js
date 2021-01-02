@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(newUserData);
       });
     } catch (err) {
-      res.status(400).json(err);
+      res.status(400).json(err.message);
     }
   });
   
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
       });
   
     } catch (err) {
-      res.status(400).json(err);
+      res.status(400).json(err.message);
     }
   });
   

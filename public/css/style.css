@@ -1,0 +1,22 @@
+
+  
+  /* //shows the line next to the card for the blog */
+  .list-container .card {
+    height: calc(100vh - 70px);
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .list-container {
+    padding-left: 0;
+  }
+  
+  .list-container .list-group,
+  .list-container .list-group-item:first-child,
+  .list-container .card {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  

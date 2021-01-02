@@ -1,16 +1,11 @@
 [
     {
-      "username": "TylerSilverman",
-      "email": "silverman.tyler@gmail.com",
-      "password": "password12345"
-    },
-    {
       "username": "Sample",
       "email": "sample@gmail.com",
       "password": "password12345"
     },
     {
-      "username": "Testing",
+      "username": "Test",
       "email": "testing@aol.com",
       "password": "password12345"
     }
