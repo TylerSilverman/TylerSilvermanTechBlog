@@ -33,7 +33,7 @@ router.get('/login', (req, res) =>{
         return;
     }
 
-    console.log("SAVED registry INFORMATION", req.session.logged_in)
+    console.log("login button clicked", req.session.logged_in)
     res.render('login')
 });
 
