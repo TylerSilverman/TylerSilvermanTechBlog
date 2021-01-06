@@ -6,9 +6,7 @@ const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 var hbs = exphbs.create({ /* config */ });
 const path = require('path');
-// const static = require('static');
 
-// const formatTime = require('./utils/helper');
 const {v4 : uuidv4} = require('uuid')
 
 

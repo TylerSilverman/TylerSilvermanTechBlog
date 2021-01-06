@@ -3,7 +3,7 @@ const { User } = require('../../models');
 
 router.post('/signup', async (req, res) => {
     try {
-      console.log("saved LOGIN INFORMATION", req.body)
+      console.log("saved registerUser INFORMATION", req.body)
       const newUserData = await User.create(req.body);
   
       req.session.save(() => {

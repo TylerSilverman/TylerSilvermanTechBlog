@@ -60,8 +60,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get("/", (req, res) =>{
-  res.json("testing")
-})
+// router.get("/", (req, res) =>{
+//   res.json("testing")
+// })
 
 module.exports = router;
