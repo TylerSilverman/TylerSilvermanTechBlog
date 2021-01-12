@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  </head>
+  <body>
+
+<div class="row">
+  <div class="col-auto">
+    <h2 class => Welcome!</h2>
+  </div>
+</div>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3">
+<div class="dashboard-form">
+			<h1>Post</h1>
+			<form action="/meditate" method="POST">
+				<input type="text" name="name" placeholder="Title">
+				<input type="text" name="description" placeholder="Description">
+          <br>
+          <br>
+          <button class="btn btn-success" type="submit">Save</button>
+          <button class="btn btn-primary" type="">Post</button>
+          <button class="btn btn-warning" type="">View</button>
+          <button class="btn btn-danger" type="">Delete</button>
+			</form>
+		</div>
+  </div>
+</div>
+</div>
+{{!-- //The home page is just static text welcoming a user to your site. The homepage should display all posts.
+Each blog post should display the title, contents, creators username, and the dated created.
+Each blog post should allow comments and display the comment, creators username and the date created. --}}
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script src="/js/login.js"></script>
+<script src="/js/playgame.js"></script>
+</body>
+</html>

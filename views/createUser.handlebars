@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+  crossorigin="anonymous">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Register Form</title>
+	<style>
+		.signup-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+
+		.signup-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+
+		.signup-form input[type="password"],
+		.signup-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+		}
+
+		.signup-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+	</style>
+</head>
+
+<body>
+	<div class = "container">
+		<h1>Register</h1>
+		<form class="signup-form" action="/api/users" method="POST">
+		{{!-- <form class="signup-form" action="/api/users" method="POST"> --}}
+			<input id="username-signup" type="text" name="username" placeholder="Username" required>
+			<br>
+			<input id="password-signup" type="password" name="password" placeholder="Password must be 8 characters" required>
+			<br>
+			<input id="name-signup" type="text" name="name" placeholder="Name" required>
+			<br>
+			<input id="email-signup" type="text" name="email" placeholder="Enter Valid Email" required>
+
+			<br>
+			<a class="btn btn-info signup" href="#">Register Now</a>
+			<a href="/login" id="login" class="btn btn-warning">Log In Here</a>
+		</form>
+	</div>
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{#if logged_in}}
+	<script src="/js/logout.js"></script>
+	{{else}}
+	<script src="/js/login.js"></script>
+	{{/if}}
+</body>
+</html>

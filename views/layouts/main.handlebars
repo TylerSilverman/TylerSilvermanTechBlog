@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="../style.css">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  {{!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> --}}
-</head>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #97e7f5">
+  <a class="navbar navbar-brand" href="/">My Platform</a>
 
-<body>
-  <header>
-    <div class="row" style="background-color: rgb(233, 245, 129);">
-    <h3 class="font-weight-bold">Tyler Silverman</h3>
-  </header>
-  
-  <nav>
-    <a href="/">Home</a>
-    <!-- If the user is logged in, show a logout button -->
-    {{#if logged_in}}
-    <button id="logout" class="btn btn-link">Log Out</button>
-    {{else}}
-    <!-- Otherwise, show a link to login -->
-    <a href="/login" class="btn btn-link">Log In</a>
-    <a href="/subscribe" class="btn btn-link">Register</a>
-    <button id="logout" class="btn btn-link">Log Out</button>
-    {{/if}}
-  <div class="dashboard-container">
-    {{{body}}}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/createUser">Register</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
   </div>
-  <!-- If the user is logged in, load the JS script for when they logout -->
- 
-  <script src="/js/logout.js"></script>
-
-  </div>
-  </nav>
+</nav>
+{{{body}}}
 
 
-
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
-    </script>-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
+

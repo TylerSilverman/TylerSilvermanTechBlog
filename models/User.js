@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const compass=require('express').Router();
 
 class User extends Model {
-  checkAuth(loginPw) {
+  checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
@@ -17,6 +18,10 @@ User.init(
       autoIncrement: true,
     },
     username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

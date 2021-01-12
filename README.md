@@ -54,11 +54,11 @@ THEN I am automatically signed out of the site
 
 The following animation demonstrates the application functionality:
 
-![homepage](https://user-images.githubusercontent.com/70153419/103461994-3e899c80-4cf0-11eb-828a-feb1f8a6d1d5.png)
-![loginPage](https://user-images.githubusercontent.com/70153419/103462000-4a755e80-4cf0-11eb-8f83-0acd8a825b5a.PNG)
-![registerPage](https://user-images.githubusercontent.com/70153419/103462012-54975d00-4cf0-11eb-864c-08f379380ac5.PNG)
+![homepage]()
+![loginPage]())
+![registerPage]())
 
-(![dashboard](https://user-images.githubusercontent.com/70153419/103461959-f66a7a00-4cef-11eb-86a9-4d86e5e3c6b6.PNG)) 
+(![dashboard]()) 
 
 
 ## Getting Started
@@ -70,6 +70,3 @@ You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to
 ## Question and Comments
 
 * please visit: www.tylersilverman.github.io
-
----
-

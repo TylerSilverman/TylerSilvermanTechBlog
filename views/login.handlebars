@@ -1,28 +1,35 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Login Form</title>
-		<style>
+
+<head>
+	<meta charset="utf-8">
+	<title>Registery Form</title>
+	<style>
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
 			font-family: Tahoma, Geneva, sans-serif;
 		}
+
 		.login-form h1 {
 			text-align: center;
 			color: #4d4d4d;
 			font-size: 24px;
 			padding: 20px 0 20px 0;
 		}
+
 		.login-form input[type="password"],
 		.login-form input[type="text"] {
 			width: 100%;
 			padding: 15px;
 			border: 1px solid #dddddd;
 			margin-bottom: 15px;
-			box-sizing:border-box;
+			box-sizing: border-box;
 		}
+
 		.login-form input[type="submit"] {
 			width: 100%;
 			padding: 15px;
@@ -33,23 +40,31 @@
 			font-weight: bold;
 			color: #ffffff;
 		}
-		</style>
-	</head>
-	<body>
-		<div class="login-form">
-			<h1>Login Form</h1>
-			<form action="/login" method="POST">
-				<input type="text" name="email" placeholder="Email" required>
-				<input type="password" name="password" placeholder="Password" required>
-          <button class="btn btn-info" type="submit">Log In</button>
-			</form>
-		</div>
+	</style>
+</head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="container">
+	<h2>Log In</h2>
+	<form class="login-form" action="/api/users/login" method="POST">
+		<input id="email-login" type="text" name="email" placeholder="Enter Valid Email" required>
+		<br>
+		<input id="password-login" type="password" name="password" placeholder="Password must be 8 characters" required>
+		<br>
+		<a class="btn btn-info login" href:"#">Log In</a>
+	</form>
+</div>
 
-  {{#if logged_in}}
-  <script src="/js/login.js"></script>
-  {{/if}}
-	</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+	integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+	integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+<script src="/js/login.js"></script>
+</body>
+
 </html>
-

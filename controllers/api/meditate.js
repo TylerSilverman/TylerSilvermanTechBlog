@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  res.render('dashboard');
+  res.render('userDashboard');
 })
 
 router.delete('/:id', async (req, res) => {

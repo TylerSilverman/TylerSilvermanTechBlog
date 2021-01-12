@@ -3,8 +3,9 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    console.log("creating user", req.session.user_id)
-    const userData = await User.create(req.session.user_id);
+    console.log("creating user")
+    const userData = await User.create(req.body);
+    console.log(userData)
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -13,14 +14,15 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(err.message);
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    // console.log("login ... userRoute");
+    console.log("You are now Logging in")
     const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log(userData)
 
     if (!userData) {
       res
@@ -59,9 +61,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end(err.message);
   }
 });
-
-// router.get("/", (req, res) =>{
-//   res.json("testing")
-// })
 
 module.exports = router;
