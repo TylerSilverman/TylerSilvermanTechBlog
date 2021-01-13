@@ -2,13 +2,15 @@
     {
         "id": 97,
         "name":"Tyler ",
+        "title": "This is the title of the post",
         "description":"Sample Description information ",
-        "date_created": "created today ", 
+        "date_created": "created today "
     },
     {
         "id": 97,
         "name":"Sample ",
+        "title": "This is the title of the post",
         "description":"Sample Description information ",
-        "date_created": "created today ", 
+        "date_created": "created today "
     }
 ]
