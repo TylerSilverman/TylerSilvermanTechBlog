@@ -44,7 +44,7 @@ const signupFormHandler = async (event) => {
       //add the alert back after fixing the dashboard route for signing up a new user
       // document.location.replace('/dashboard');
       console.log(response)
-      alert('Failed to sign up.');
+      alert('Failed to sign up. Please check password, and email address');
     }
   }
 };

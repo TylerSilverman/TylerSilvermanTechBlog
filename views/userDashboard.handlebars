@@ -13,7 +13,7 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2 class => Welcome!</h2>
+    <h2 class => Welcome, {{user.name}}!</h2>
   </div>
 </div>
 <br>
@@ -21,15 +21,15 @@
 <div class="row row-cols-1 row-cols-md-3">
 <div class="dashboard-form">
 			<h1>Post</h1>
-			<form action="/meditate" method="POST">
+			<form action="#" method="POST">
 				<input type="text" name="name" placeholder="Title">
 				<input type="text" name="description" placeholder="Description">
           <br>
           <br>
-          <button class="btn btn-success" type="submit">Save</button>
-          <button class="btn btn-primary" type="">Post</button>
+          <button class="btn btn-success" type="submit">Post</button>
+          {{!-- <button class="btn btn-primary" type="">Post</button>
           <button class="btn btn-warning" type="">View</button>
-          <button class="btn btn-danger" type="">Delete</button>
+          <button class="btn btn-danger" type="">Delete</button> --}}
 			</form>
 		</div>
   </div>
@@ -45,6 +45,5 @@ Each blog post should allow comments and display the comment, creators username 
 
 
 <script src="/js/login.js"></script>
-<script src="/js/playgame.js"></script>
 </body>
 </html>
