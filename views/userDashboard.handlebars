@@ -13,7 +13,7 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2 class => Welcome, {{user.name}}!</h2>
+    <h2 class => Welcome, {{post.user.name}}!</h2>
   </div>
 </div>
 <br>
@@ -28,9 +28,8 @@
           <br>
           <br>
           <button class="btn btn-success" type="submit">Post</button>
-          {{!-- <button class="btn btn-primary" type="">Post</button>
-          <button class="btn btn-warning" type="">View</button>
-          <button class="btn btn-danger" type="">Delete</button> --}}
+          <button class="btn btn-warning" type="view">View</button>
+          <button class="btn btn-info" type="edit">Comment</button>
 			</form>
 		</div>
   </div>

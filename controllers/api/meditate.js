@@ -1,18 +1,33 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Post, Comment } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newPost = await Post.create({
       ...req.body,
-      email: req.session.email,
+      email: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err.message);
   }
 });
+
+router.post('/:id/comment', async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      ...req.body,
+      email: req.session.user_id,
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+});
+
+
 
 router.get('/', async (req, res) => {
   res.render('userDashboard');
@@ -20,19 +35,19 @@ router.get('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id,
         email: req.session.email,
       },
     });
 
-    if (!projectData) {
+    if (!postData) {
       res.status(404).json({ message: 'No project found with this id from the dashboard!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err.message);
   }
