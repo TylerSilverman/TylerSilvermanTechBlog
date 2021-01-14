@@ -5,7 +5,15 @@ const router = require('express').Router();
 // const { User, Project } = require('../../models');
 
 router.get("/", (req, res) => {
+  console.log("dashboard routes get route")
     res.render("home")
+
+})
+//this is the post methond to get the Forum Blog 
+router.post("/", (req, res) => {
+  console.log("dashboard routes POST route")
+    // res.render("home")
+    res.send("home index")
 
 })
 
