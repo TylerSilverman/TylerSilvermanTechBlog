@@ -10,12 +10,10 @@
 </head>
 <body>
   <html>
-    <h6>This is Where the post shows up:</h6>
-    <br><br>
-{{#each posts as |post|}}
   <br>
 <div class="card text-black ">
   <div class="card-header">
+    {{#each posts as |post|}}
   <h5>
     {{!-- //this is getting the id from the sign up and also the post from the dashboard and posting it on the home Page --}}
     <a href="/userDashboard{{post.id}}"{{post.title}}, {{post.description}}></a>

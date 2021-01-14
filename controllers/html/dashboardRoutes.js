@@ -1,21 +1,25 @@
 const axios = require('axios').default;
 const securityScan = require('../../utils/auth');
-
 const router = require('express').Router();
-// const { User, Project } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
+//this is the GET methond to get the Forum Blog
 router.get("/", (req, res) => {
-  console.log("dashboard routes get route")
+  console.log("dashboard routes GET route")
     res.render("home")
 
 })
-//this is the post methond to get the Forum Blog 
-router.post("/", (req, res) => {
+//this is the POST methond to get the Forum Blog 
+router.post('/', securityScan, async (req, res) => {
   console.log("dashboard routes POST route")
-    // res.render("home")
-    res.send("home index")
-
-})
+  const body = req.body;
+  try {
+    const newPost = await Post.create({ ...body, userId: req.session.user_id });
+    res.redirect("/", newPost);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
 
 //getting the login information-
 router.get('/login', (req, res) => {
