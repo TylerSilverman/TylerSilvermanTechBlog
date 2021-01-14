@@ -14,8 +14,8 @@ router.post('/', securityScan, async (req, res) => {
   console.log("dashboard routes POST route")
   const body = req.body;
   try {
-    const newPost = await Post.create({ ...body, userId: req.session.user_id });
-    res.redirect("/", newPost);
+    const newPost = await Post.create({ ...body, user_id: req.session.user_id });
+    res.redirect("/");
   } catch (err) {
     res.status(500).json(err.message);
   }

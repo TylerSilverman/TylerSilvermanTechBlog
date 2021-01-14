@@ -18,7 +18,8 @@ Post.init(
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: DataTypes.STRING,
     },
     description: {
       type: DataTypes.STRING,
