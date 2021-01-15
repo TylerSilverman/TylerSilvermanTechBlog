@@ -24,7 +24,18 @@
       <p>{{post.name}}</p>
       <p>{{post.description}}</p>
       <footer class="blockquote-footer">Posted by: {{post.user.name}} <cite title="Source Title"> on {{post.date_created}}</cite></footer>
-      <button class="btn btn-dark" type="text" id="comment">Comment</button>
+      <h2>Comment Here</h2>
+      <ul>
+    {{#each comments as |comment|}}
+    <li>{{comment.name}}</li>
+    {{/each}}
+    </ul>
+      <form class="comment" id="comment" method="POST" action="/api/projects/comments">
+        <input type="hidden" name="post_id" value={{post.id}}>
+          <textarea type="text" name="name" class="form-control" aria-label="With textarea" placeholder="add comment if you wish"></textarea>
+          <br>
+        <button class="btn btn-dark" type="text" id="comment">Comment</button>
+        </form>
     </blockquote>
   </div>
 </div>

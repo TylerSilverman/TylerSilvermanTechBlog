@@ -6,6 +6,9 @@ const exphbs = require('express-handlebars');
 const helper = require("./utils/auth");
 const hbs = exphbs.create({helper});
 
+const chalk = require('chalk');
+console.log(chalk.green('This is My Forum Blog!'));
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 

@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 const securityScan = require('../../utils/auth');
 const router = require('express').Router();
-const { User, Post} = require('../../models');
+const { User, Post, Comment} = require('../../models');
 
 //this is the GET methond to get the Forum Blog
 router.get('/', async (req, res) => {
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll({
       include: [
         {
-          model: User,
+          model: Comment,
           attributes: ['name'],
         },
       ],
