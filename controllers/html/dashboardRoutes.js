@@ -1,14 +1,55 @@
 const axios = require('axios').default;
 const securityScan = require('../../utils/auth');
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User, Post} = require('../../models');
 
 //this is the GET methond to get the Forum Blog
-router.get("/", (req, res) => {
-  console.log("dashboard routes GET route")
-    res.render("home")
+router.get('/', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-})
+    // Serialize data so the template can read it
+    const posts = postData.map((project) => project.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('home', { 
+      posts, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/post/:id', async (req, res) => {
+  try {
+    const posttData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const posts = posttData.get({ plain: true });
+
+    res.render('home', {
+      ...posts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //this is the POST methond to get the Forum Blog 
 router.post('/', securityScan, async (req, res) => {
   console.log("dashboard routes POST route")
@@ -23,9 +64,15 @@ router.post('/', securityScan, async (req, res) => {
 
 //getting the login information-
 router.get('/login', (req, res) => {
-    console.log("You clicked the login button in the nav bar")
-    res.render('login')
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/home');
+    return;
+  }
+
+  res.render('login');
 });
+
 
 
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
