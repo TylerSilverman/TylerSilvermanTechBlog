@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS `user` (
       CREATE TABLE IF NOT EXISTS `post` (
     `id` INTEGER NOT NULL auto_increment , 
     `name` VARCHAR(255) NOT NULL,
-    `title` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL, 
     'date_created' date,
     PRIMARY KEY (`id`)
@@ -22,7 +21,6 @@ CREATE TABLE IF NOT EXISTS `user` (
        CREATE TABLE IF NOT EXISTS `comment` (
     `id` INTEGER NOT NULL auto_increment , 
     `name` VARCHAR(255) NOT NULL,
-    `title` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL, 
     'date_created' date,
     PRIMARY KEY (`id`)
