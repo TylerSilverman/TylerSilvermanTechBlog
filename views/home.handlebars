@@ -11,23 +11,25 @@
 <body>
   <html>
   <br>
+  {{#each posts as |post|}}
 <div class="card text-black ">
   <div class="card-header">
-    {{#each posts as |post|}}
   <h5>
     {{!-- //this is getting the id from the sign up and also the post from the dashboard and posting it on the home Page --}}
-    <a href="/userDashboard{{post.id}}"{{post.title}}, {{post.description}}></a>
+    <a href="/userDashboard{{post.id}}"{{post.name}}, {{post.description}}></a>
   </h5>
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>{{post.content}}</p>
+      <p>{{post.name}}</p>
       <p>{{post.description}}</p>
-      <p>{{post.descriptionData}}</p>
       <footer class="blockquote-footer">Posted by: {{post.user.name}} <cite title="Source Title"> on {{post.date_created}}</cite></footer>
+      <button class="btn btn-dark" type="text" id="comment">Comment</button>
+      {{!-- <button class="btn btn-danger" type="clear">Delete</button> --}}
     </blockquote>
   </div>
 </div>
+<br>
 {{/each}}
 
      {{!-- javascript   --}}

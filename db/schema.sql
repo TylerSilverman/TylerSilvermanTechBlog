@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS socialTechBlog;
-CREATE DATABASE socialTechBlog;
-USE socialTechBlog;
+DROP DATABASE IF EXISTS forumblog;
+CREATE DATABASE forumblog;
+USE forumblog;
 
 CREATE TABLE IF NOT EXISTS `user` (
     `id` INTEGER NOT NULL auto_increment , 
